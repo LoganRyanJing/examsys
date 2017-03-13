@@ -597,6 +597,13 @@ class app
 			$this->tpl->display('basic_area');
 			break;
 
+			//店铺列表
+			case 'shop':
+				$areas = $this->area->getAreaListByPage($page,10);
+				$this->tpl->assign('areas',$areas);
+				$this->tpl->display('basic_shop');
+				break;
+
 			//删除考试设置信息
 			case 'delbasic':
 			$page = $this->ev->get('page');

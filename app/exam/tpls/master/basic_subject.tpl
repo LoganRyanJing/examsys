@@ -10,7 +10,7 @@
 		<div class="span10" id="datacontent">
 {x2;endif}
 			<ul class="breadcrumb">
-				<li><a href="index.php?{x2;$_app}-master">{x2;$apps[$_app]['appname']}</a> <span class="divider">/</span></li>
+				<li><a href="index.php?{x2;$_app}-master">{x2;$apps[$_app]['appname']}</a> <span class="divider">/</span></li> 
 				<li class="active">科目管理</li>
 			</ul>
 			<ul class="nav nav-tabs">
