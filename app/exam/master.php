@@ -599,10 +599,35 @@ class app
 
 			//店铺列表
 			case 'shop':
-				$areas = $this->area->getAreaListByPage($page,10);
-				$this->tpl->assign('areas',$areas);
+				$shops = $this->area->getAreaListByPage($page,10);
+				$this->tpl->assign('shops',$shops);
 				$this->tpl->display('basic_shop');
 				break;
+			//添加店铺信息
+			case 'addshop':
+			if($this->ev->get('insertshop'))
+			{
+				$args = $this->ev->get('args');
+				$id = $this->area->addArea($args);
+				if(!$id)
+				$message = array(
+					'statusCode' => 300,
+					"message" => "操作失败，区号已存在"
+				);
+				else
+				$message = array(
+					'statusCode' => 200,
+					"message" => "操作成功",
+					"callbackType" => "forward",
+				    "forwardUrl" => "index.php?exam-master-basic-shop&page={$page}{$u}"
+				);
+				$this->G->R($message);
+			}
+			else
+			{
+				$this->tpl->display('basic_addshop');
+			}
+			break;
 
 			//删除考试设置信息
 			case 'delbasic':

@@ -18,7 +18,7 @@
 					<a href="#">店铺设置</a>
 				</li>
 				<li class="dropdown pull-right">
-					<a href="index.php?exam-master-basic-addarea&page={x2;$page}{x2;$u}">添加店铺</a>
+					<a href="index.php?exam-master-basic-addshop&page={x2;$page}{x2;$u}">添加店铺</a>
 				</li>
 			</ul>
 	        <table class="table table-hover">
